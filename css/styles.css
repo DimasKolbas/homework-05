@@ -93,15 +93,6 @@ body {
   margin-right: 50px;
 }
 
-.header-list-item:hover .header-list-item-line {
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  top: 100%;
-  background: #2196f3;
-  border-radius: 2px;
-}
-
 .header-pages {
   font-weight: 500;
   font-size: 14px;
@@ -149,12 +140,25 @@ body {
   color: var(--secondary-color);
 }
 
+/* Выделение шрифта и нижнее подчёркивание на страницах */
 .header-pages:hover,
 :focus {
   color: var(--hover-color);
 }
 
-.header-contacts-list-item:hover .header-mail-icon {
+.header-list-item .header-pages:hover::before,
+:focus::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  top: 100%;
+  background: var(--hover-color);
+  border-radius: 2px;
+}
+
+/* Выделение шрифта и иконок в mail-tel */
+/* .header-contacts-list-item:hover .header-mail-icon {
   fill: var(--hover-color);
 }
 
@@ -168,6 +172,29 @@ body {
 
 .header-contacts-list-item:hover .header-tel {
   color: var(--hover-color);
+} */
+
+/* .header-mail-icon:hover,
+:focus {
+  fill: var(--hover-color);
+} */
+
+.header-contacts-list-item:hover .header-mail {
+  color: var(--hover-color);
+}
+
+.header-contacts-list-item:hover,
+:focus .header-mail-icon {
+  fill: var(--hover-color);
+}
+
+.header-contacts-list-item:hover .header-tel {
+  color: var(--hover-color);
+}
+
+.header-contacts-list-item:hover,
+:focus .header-tel-icon {
+  fill: var(--hover-color);
 }
 
 /* !INDEX PAGE! */
@@ -281,6 +308,34 @@ body {
 
 .job-list-item:not(:last-child) {
   margin-right: 30px;
+}
+
+.job-section-image {
+  position: relative;
+}
+
+.job-section-image > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.job-section-overlay {
+  position: absolute;
+  padding: 27px 82px;
+  width: 100%;
+  height: 70px;
+  bottom: 0;
+  background: rgba(47, 48, 58, 0.8);
+}
+
+.job-section-overlay-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14em;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--light-color);
 }
 
 /* *COMMAND SECTION* */
